@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: "backed-challenge"
+
+springdoc:
+  swagger-ui.path: /api
+  api-docs.path: /api-docs
+
+password:
+  minLength: 9
+  maxLength: 128
+  symbols: "!@#$%^&*()-+"
+  allowDuplicates: false
