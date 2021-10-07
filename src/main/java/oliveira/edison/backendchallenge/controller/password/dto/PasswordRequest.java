@@ -10,8 +10,5 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PasswordRequest {
-    /**
-     *
-     */
     private char[] secret;
 }

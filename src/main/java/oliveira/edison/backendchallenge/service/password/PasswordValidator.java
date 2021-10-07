@@ -1,22 +1,31 @@
-package oliveira.edison.backendchallenge.service.password.validator;
+package oliveira.edison.backendchallenge.service.password;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import oliveira.edison.backendchallenge.service.password.exceptions.DuplicateCharException;
 import oliveira.edison.backendchallenge.service.password.exceptions.EmptyPasswordException;
 import oliveira.edison.backendchallenge.service.password.exceptions.InvalidCharException;
 import oliveira.edison.backendchallenge.service.password.exceptions.PasswordLengthException;
 import oliveira.edison.backendchallenge.service.password.exceptions.PasswordPatternException;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.TreeSet;
 
+@Service
+@NoArgsConstructor
 @AllArgsConstructor
 public class PasswordValidator implements IPasswordValidator {
 
-    private final int minLength;
-    private final int maxLength;
-    private final String symbols;
-    private final boolean allowDuplicates;
+    @Value("${password.minLength}")
+    private int minLength;
+    @Value("${password.maxLength}")
+    private int maxLength;
+    @Value("${password.symbols}")
+    private String symbols;
+    @Value("${password.allowDuplicates}")
+    private boolean allowDuplicates;
 
     /**
      * Verifica se a senha fornecida atende todos os requisitos.
@@ -66,11 +75,5 @@ public class PasswordValidator implements IPasswordValidator {
         if (!hasUpperCaseLetter) throw PasswordPatternException.missingUpperCaseLetter();
         if (!hasLowerCaseLetter) throw PasswordPatternException.missingUpperCaseLetter();
         if (!hasSymbol) throw PasswordPatternException.missingSymbol();
-    }
-
-    @Override
-    public String toString() {
-        return "PasswordValidator{" + "minLength=" + minLength + ", maxLength=" + maxLength + ", symbols='" + symbols +
-            '\'' + ", allowDuplicates=" + allowDuplicates + '}';
     }
 }

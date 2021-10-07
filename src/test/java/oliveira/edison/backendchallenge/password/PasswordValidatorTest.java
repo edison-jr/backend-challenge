@@ -1,10 +1,10 @@
 package oliveira.edison.backendchallenge.password;
 
+import oliveira.edison.backendchallenge.service.password.PasswordValidator;
 import oliveira.edison.backendchallenge.service.password.exceptions.DuplicateCharException;
 import oliveira.edison.backendchallenge.service.password.exceptions.InvalidCharException;
 import oliveira.edison.backendchallenge.service.password.exceptions.PasswordLengthException;
 import oliveira.edison.backendchallenge.service.password.exceptions.PasswordPatternException;
-import oliveira.edison.backendchallenge.service.password.validator.PasswordValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
