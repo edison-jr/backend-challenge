@@ -51,6 +51,7 @@ $ ./gradlew integrationTest
 * [JUnit](https://junit.org/junit5/docs/current/user-guide/) - Testes automatizados
 * [Mockito](https://site.mockito.org/) - Simular instancias de classes e comportamentos de métodos
 * [Swagger](https://swagger.io/docs/specification/about/) - Especificação de API (OAS 3.0)
+* [Jacoco](https://www.jacoco.org/jacoco/trunk/doc/) - Relatório de cobertura de testes
 
 ### Decisões
 
